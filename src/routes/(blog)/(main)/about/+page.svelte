@@ -5,13 +5,21 @@
 	import SectionItemDescriptionList from './_components/SectionItemDescriptionList.svelte';
 	import { LINKS } from '@/config/blog';
 	import Seo from '@/components/widget/seo/seo.svelte';
+	import { toast } from 'svelte-sonner';
+	import { Toaster } from '@/components/ui/sonner';
 
 	function onClickEmail() {
 		window.navigator.clipboard.writeText(LINKS.email);
+		toast.success('이메일이 클립보드에 복사되었습니다', {
+			description: LINKS.email,
+			duration: 2000,
+		});
 	}
 </script>
 
 <Seo />
+
+<Toaster />
 
 <article>
 	<!-- 소개 -->
