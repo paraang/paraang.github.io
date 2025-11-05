@@ -5,7 +5,7 @@
 	let { data } = $props();
 </script>
 
-<Seo />
+<Seo title={data.metadata.title} description={data.metadata.description} />
 
 <header class="mb-8">
 	<h1 class="font-black-sans text-6xl text-inherit">
